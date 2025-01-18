@@ -46,13 +46,13 @@
 
 /* ____________First Page__auf__________ */
 
-body, html {
+/* body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family:"Redaction_10_Regular";
-  overflow: hidden; 
-}
+  overflow: hidden;  
+} */
 
 #loading-screen {
   position: fixed;
@@ -60,26 +60,22 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #333; 
-  color: #fff;           
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
   z-index: 9999;       
   opacity: 1;
   transition: opacity 1s ease-in-out; 
 }
 
-/* Reset body and html */
+/* Reset body and html
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
-}
+} */
 
 /* Full-page container */
 .full-page-image {
@@ -100,6 +96,20 @@ body, html {
   transform: translate(-50%, -50%); /* Center the image */
 }
 
+.full-page-image img:last-child {
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 80%;
+}
+
+/* Media Query for smaller screens (<= 768px) */
+@media (max-width: 768px) {
+  .full-page-image img:last-child {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
 
 
 /* ____________First Page_____zu_______ */
@@ -148,7 +158,7 @@ body, html {
     text-decoration: none;
     color: #000000;
     font-size: 1.2rem;
-    font-family: "Redaction_10_Regular";
+    font-family: "lunchtype";
      font-weight: regular; 
      display: block;
   }
@@ -229,24 +239,146 @@ body, html {
     background-image: url('img/Hi_Website_Responsive_Test4.jpg'); /* New background image for screens 768px and below */
   }
 }
+/* About Page */
+/* Responsive Grid Container */
+.responsive-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Zwei Spalten: links für das Bild, rechts für den Text */
+  gap: 2rem; /* Abstand zwischen Bild und Text */
+  background-color: white; /* Weißer Hintergrund */
+  padding: 2.5rem; /* Abstand von 2,5rem oben und unten */
+  margin: 0 auto; /* Zentriert den Container auf der Seite */
+  width: calc(100% - 4rem); /* Der Container nimmt die volle Breite minus 2rem links und rechts */
+  height: calc(100vh - 5rem); /* Container nimmt 100% der Viewporthöhe minus 5rem (oben und unten) */
+  max-width: 1200px; /* Maximale Breite des Containers */
+}
 
-/* Projects Grid  */
-.grid {
-  display:block;
+/* Linkes Container (Bild) */
+.container-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-image {
+  width: 100%; /* Bild nimmt die volle Breite seines Containers ein */
+  max-width: 400px; /* Maximale Breite des Bildes */
+  height: auto; /* Beibehaltung des Seitenverhältnisses */
+   /* Optional: abgerundete Ecken */
+}
+
+/* Rechtes Container (Text) */
+.container-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 600px; /* Maximale Breite für den Text */
+}
+
+/* Responsives Design für kleinere Bildschirme */
+
+/* Für Bildschirme <= 768px */
+@media (max-width: 768px) {
+  .responsive-grid-container {
+    grid-template-columns: 1fr; /* Spalten stapeln sich vertikal */
+    padding: 1.5rem; /* Reduziere den Abstand bei kleineren Bildschirmen */
+  }
+
+  .container-left, .container-right {
+    width: 100%; /* Beide Container nehmen die volle Breite ein */
+    padding: 10px;
+  }
+
+  .container-image {
+    width: 100%; /* Bild nimmt die volle Breite ein */
+    max-width: 100%; /* Entfernt das maximale Bildmaß */
+  }
+
+  .container-text {
+    font-size: 1rem; /* Kleinere Schriftgröße auf mobilen Geräten */
+  }
+}
+
+/* Für sehr kleine Bildschirme <= 480px */
+@media (max-width: 480px) {
+  .responsive-grid-container {
+    padding: 1rem; /* Noch weniger Padding auf kleinen Geräten */
+  }
+
+  .container-text {
+    font-size: 0.9rem; /* Noch kleinere Schriftgröße für sehr kleine Bildschirme */
+  }
+}
+
+
+/* Photogallery */
+html{
+  scroll-behavior: smooth;
+}
+
+.row_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 37px;
+  padding-top: 4rem;
+}
+
+/* Create four equal columns that sits next to each other */
+.column_gallery {
+  flex: 25%;
+  max-width: 25%;
+  padding:  9px;
+  padding-top: 3.6rem;
+}
+
+.column_gallery img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/* Photogallery */
+
+/* About Page */
+
+
+/* Projects Grid 
+.projects_grid {
+ 
   padding:16px; 
-
+  grid-gap: 16px;
+  display: grid;
     @media (min-width: 768px) {
-        display: grid;
-        grid-gap: 16px;
-        grid-template-columns: repeat(2, 1fr);
         
+        grid-template-columns: repeat(4, 3fr);
+    
     }
-
     .col{
       background-color: #FF00FF;
       margin-bottom: 16px;
       padding:16px;
 
     }
-  }
-/* Projects Grid  */
+  } */

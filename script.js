@@ -27,27 +27,27 @@ hamburger.addEventListener('click', () => {
 
   });
 
-// Funktion, um den aktiven Link basierend auf der URL zu setzen
-document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('.link');
-  const currentLocation = window.location.hash;
+// // Funktion, um den aktiven Link basierend auf der URL zu setzen
+// document.addEventListener('DOMContentLoaded', function () {
+//   const links = document.querySelectorAll('.link');
+//   const currentLocation = window.location.hash;
 
-  // Entfernt die 'active' Klasse von allen Links
-  links.forEach(link => link.classList.remove('active'));
+//   // Entfernt die 'active' Klasse von allen Links
+//   links.forEach(link => link.classList.remove('active'));
 
-  // Setzt die 'active' Klasse nur für den aktuellen Link
-  if (currentLocation) {
-    const activeLink = document.querySelector(`#${currentLocation.substring(1)}-link`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-    }
-  }
+//   // Setzt die 'active' Klasse nur für den aktuellen Link
+//   if (currentLocation) {
+//     const activeLink = document.querySelector(`#${currentLocation.substring(1)}-link`);
+//     if (activeLink) {
+//       activeLink.classList.add('active');
+//     }
+//   }
 
-  // Event-Listener für alle Links, um die aktive Klasse zu setzen
-  links.forEach(link => {
-    link.addEventListener('click', function () {
-      links.forEach(link => link.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-});
+//   // Event-Listener für alle Links, um die aktive Klasse zu setzen
+//   links.forEach(link => {
+//     link.addEventListener('click', function () {
+//       links.forEach(link => link.classList.remove('active'));
+//       this.classList.add('active');
+//     });
+//   });
+// });
