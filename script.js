@@ -18,14 +18,17 @@ window.addEventListener("load", () => {
 
 
 // ----------------Loading screen -----------------
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle("active");
-  hamburger.classList.toggle("active");
-
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
   });
+});
+
+
 
 // // Funktion, um den aktiven Link basierend auf der URL zu setzen
 // document.addEventListener('DOMContentLoaded', function () {

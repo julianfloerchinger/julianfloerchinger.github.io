@@ -1,12 +1,12 @@
 /* ____________Fonts____auf________ */
 @font-face {
-  font-family: 'lunchtype';
+  font-family: 'lunchtype_m';
   src:
 		url('font/lunchtype22-medium-webfont\ Kopie.woff2') format('woff2'),
   }
 
 @font-face {
-  font-family: 'lunchtype';
+  font-family: 'lunchtype_r';
   src:
 		url('font/lunchtype22-regular-webfont\ Kopie.woff2') format('woff2'),
 }
@@ -46,13 +46,13 @@
 
 /* ____________First Page__auf__________ */
 
-/* body, html {
+body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family:"Redaction_10_Regular";
-  overflow: hidden;  
-} */
+  font-family:"Redaction_10_regular";
+  /* overflow: hidden;  */
+  scroll-behavior: smooth;
+}
 
 #loading-screen {
   position: fixed;
@@ -67,15 +67,6 @@
   opacity: 1;
   transition: opacity 1s ease-in-out; 
 }
-
-/* Reset body and html
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-} */
 
 /* Full-page container */
 .full-page-image {
@@ -112,27 +103,29 @@ body, html {
 }
 
 
-/* ____________First Page_____zu_______ */
+/* ___________________________First Page_____zu_______ */
 
  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-/* Navigation */
+/*________________________________________________________________________________ Navigation____________________________________________________________________ */
   .navbar {
     display: flex;
     justify-content:space-between; 
     align-items: center; 
-    padding: 2.5rem 3rem; 
+    padding: 0 40px; 
     background-color:	#ffffff;
     color: 	#000000;
     position: fixed;
     top: 0;
     width: 100%;
+    height: 120px;
     border-bottom-style: solid;
     border-width: 2px;
     color: #000000;
+    z-index: 1000;
   }
 
 .logo {
@@ -157,8 +150,8 @@ body, html {
   .nav-links a {
     text-decoration: none;
     color: #000000;
-    font-size: 1.2rem;
-    font-family: "lunchtype";
+    font-size: 1.3rem;
+    font-family: "lunchtype_r";
      font-weight: regular; 
      display: block;
   }
@@ -175,51 +168,51 @@ body, html {
   .hamburger {
     font-size: 1.5rem;
     cursor: pointer;
-    display: none;
-    }
-
+    display: none; /* Hidden by default */
+    z-index: 1001;
+  }
+  
+  
   .mobile-menu {
-
     display: flex;
+    position: fixed;
     flex-direction: column;
+    top:120px;
+    width: 100%;
     gap: 1rem;
     background-color: #000000;
     overflow: hidden;
-    max-height: 0;
+    max-height: 0; /* Initially hidden */
     transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-
- .mobile-menu a {
-      color: #f7e779;
-      text-decoration: none;
-      font-size: 1.2rem;
-      margin-left: 2rem;
-      max-height: 0;
-      }
-
-
+    z-index: 999;
+  }
+  
+  .mobile-menu a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    color: #f7e779;
+  }
+  
+  /* Responsive Styles */
   @media (max-width: 768px) {
-      .hamburger {
-      display: block;
-      }
-      .nav-links {
-        display: none;
-      }
-      
+    .hamburger {
+      display: block; /* Show hamburger for small screens */
+    }
+  
+    .nav-links {
+      display: none; /* Hide desktop menu */
+    }
+  
+    .mobile-menu.active {
+      max-height: 200px; /* Show menu when active */
+      padding: 1rem 0;
+    }
+  }
+  
 
-  .hamburger.active {
-      color: #f39c12;
-        }
 
-  .mobile-menu.active {
-        max-height: 200px;
-        padding: 1rem 0;
-          }
-
-        }
-/* navigation */
-
- /* <!-- Background image index --> */ 
+ /*___________________________________________________________________________INDEX-Welcome______________________________________________________________________ */ 
 .background {
   position: fixed; 
   top: 0;
@@ -239,47 +232,58 @@ body, html {
     background-image: url('img/Hi_Website_Responsive_Test4.jpg'); /* New background image for screens 768px and below */
   }
 }
-/* About Page */
+
+
+
+/* ________________________________________________________________________About Page___________________________________________________________________________ */
 /* Responsive Grid Container */
 .responsive-grid-container {
+  margin-top:120px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Zwei Spalten: links für das Bild, rechts für den Text */
+  grid-template-columns: 1fr 2fr; /* Zwei Spalten: links für das Bild, rechts für den Text */
   gap: 2rem; /* Abstand zwischen Bild und Text */
-  background-color: white; /* Weißer Hintergrund */
-  padding: 2.5rem; /* Abstand von 2,5rem oben und unten */
-  margin: 0 auto; /* Zentriert den Container auf der Seite */
-  width: calc(100% - 4rem); /* Der Container nimmt die volle Breite minus 2rem links und rechts */
-  height: calc(100vh - 5rem); /* Container nimmt 100% der Viewporthöhe minus 5rem (oben und unten) */
-  max-width: 1200px; /* Maximale Breite des Containers */
+  background-color: #ffffff; /* Weißer Hintergrund */
+  padding: 3rem; /* Abstand von 2,5rem oben und unten */
+  
 }
 
 /* Linkes Container (Bild) */
 .container-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; 
+  align-items: center; 
+  
+  
 }
 
 .container-image {
   width: 100%; /* Bild nimmt die volle Breite seines Containers ein */
   max-width: 400px; /* Maximale Breite des Bildes */
-  height: auto; /* Beibehaltung des Seitenverhältnisses */
-   /* Optional: abgerundete Ecken */
+  height: auto;
+/* margin-left: -9px; */
 }
 
 /* Rechtes Container (Text) */
 .container-right {
-  display: flex;
-  justify-content: center;
+  display: block; /* Change from flex to block layout */
+  text-align: left;
   align-items: center;
 }
 
 .container-text {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.9;
   text-align: left;
-  max-width: 600px; /* Maximale Breite für den Text */
+  max-width: 900px;
+  padding-right: 41px;
+   /* Maximale Breite für den Text */
+}
+.container_text p{
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  
 }
 
 /* Responsives Design für kleinere Bildschirme */
@@ -293,7 +297,7 @@ body, html {
 
   .container-left, .container-right {
     width: 100%; /* Beide Container nehmen die volle Breite ein */
-    padding: 10px;
+    padding: 20px;
   }
 
   .container-image {
@@ -317,17 +321,29 @@ body, html {
   }
 }
 
-
-/* Photogallery */
-html{
-  scroll-behavior: smooth;
+.instagram-link {
+  color: #000000; /* Instagram purple color */
+  text-decoration: none; /* Removes the underline */
+  font-size: 2rem; /* Adjusts the font size */
 }
+
+.instagram-link:hover {
+  color: #FF00FF; /* Instagram pink color on hover */
+  text-decoration: none; /* Adds an underline on hover */
+}
+
+.getintouch {
+  font-size: 2.5rem;
+  font-family:"Redaction_50_Regular"
+}
+/*____________________________________________________________________________Gallery-Page________________________________________________________________________ */
+
 
 .row_gallery {
   display: flex;
   flex-wrap: wrap;
-  padding: 37px;
-  padding-top: 4rem;
+  padding: 31px;
+  padding-top: 95px;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -346,7 +362,7 @@ html{
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-  .column {
+  .column_gallery {
     flex: 50%;
     max-width: 50%;
   }
@@ -354,31 +370,236 @@ html{
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
+  .column_gallery {
     flex: 100%;
     max-width: 100%;
   }
 }
-/* Photogallery */
+/*____________________________________________________________________________Projects-Page______________________________________________________________________*/
 
-/* About Page */
-
-
-/* Projects Grid 
-.projects_grid {
- 
-  padding:16px; 
-  grid-gap: 16px;
+/* General styling for the grid container */
+.responsive-grid {
+  margin-top: 120px;
   display: grid;
-    @media (min-width: 768px) {
-        
-        grid-template-columns: repeat(4, 3fr);
-    
-    }
-    .col{
-      background-color: #FF00FF;
-      margin-bottom: 16px;
-      padding:16px;
+  grid-template-columns: repeat(5, 300px); 
+  grid-template-rows: repeat(2, 800px); /* 2 rows of equal height */
+  /* gap: 2px;  */
+  /* row-gap: 100px; */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 41px;
+  box-sizing: border-box;
+  justify-content: center;
+ 
+}
 
-    }
-  } */
+.grid-item {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  justify-content: flex-start; /* Align content at the top */
+  /* border: 2px solid #000;  */
+  overflow:hidden;
+  
+}
+
+/* Alternating styles for grid items */
+.grid-item:nth-child(odd) {
+  flex-direction: column; /* Default: image on top, text on bottom */
+}
+
+.grid-item:nth-child(even) {
+  flex-direction: column-reverse; /* Reverse: text on top, image on bottom */
+}
+
+/* Reset alternating styles for each row */
+.responsive-grid > .grid-item:nth-child(5n + 1),
+.responsive-grid > .grid-item:nth-child(5n + 2),
+.responsive-grid > .grid-item:nth-child(5n + 3),
+.responsive-grid > .grid-item:nth-child(5n + 4),
+.responsive-grid > .grid-item:nth-child(5n + 5) {
+  flex-direction: column; /* Reset the pattern at the start of each row */
+}
+
+.responsive-grid > .grid-item:nth-child(5n + 2),
+.responsive-grid > .grid-item:nth-child(5n + 4) {
+  flex-direction: column-reverse; /* Reverse even boxes within the row */
+}
+
+
+/* Image styling */
+.grid-item img {
+  width: 100%; /* Fit image to grid item width */
+  height: 50%; /* Occupy the top half */
+  object-fit: cover; /* Ensure image covers the area */
+  display: block;
+}
+
+/* Text styling */
+.grid-item .text {
+  width: 100%; /* Full width of the grid box */
+  height: 50%; /* Occupy the bottom half */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 2rem;
+/* font-weight: bold; */
+  font-family: "Redaction_10_bold";
+  background-color: #ffffff; /* Optional: different background for text area */
+  color: #333;
+  text-align: center;
+  gap: 1rem;
+  padding-top: 30px;
+}
+
+ .year{
+  font-size: 1.5rem;
+  font-family:"lunchtype_r";
+}
+
+.responsive-grid a {
+  position: relative;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit the text color */
+  display: flex; /* Make the link behave like a flex container */
+  flex-direction: column; /* Stack content vertically */
+   /* Same border styling as grid-item */
+   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth scaling */
+}
+
+.responsive-grid a:hover {
+  border: 2px solid #000;
+  transform: scale(1.03);
+  z-index: 5;
+}
+
+/* Media query for screens 800px or smaller */
+@media (max-width: 800px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, 1fr); /* Adjust rows */
+  }
+}
+
+/* Media query for screens 600px or smaller */
+@media (max-width: 600px) {
+  .responsive-grid {
+    grid-template-columns: 1fr; /* 1 column */
+    grid-template-rows: repeat(6, 1fr); /* Adjust rows */
+  }
+}
+
+/* ____________________________________________________________________einzelne Projekte_______________________________________________________________________________ */
+
+/* Page Layout */
+.page-layout {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* Upper Box Styling */
+.upper-box {
+  margin-top: 120px;
+  padding-top: 41px;
+  background-color: #ffffff; /* Light grey background for contrast */
+  flex: 0 0 auto;
+  display: flex; /* Use flexbox for splitting the box */
+  /* align-items: flex-start; */
+  justify-content: space-between; /* Spread out the text elements */
+  padding-bottom: 41px;
+  gap: 20px;
+  padding-left: 41px;
+  padding-right: 41px;
+  box-sizing: border-box;
+}
+
+.upper-text-left {
+  font-size: 2rem;
+  flex: 7; /* 70% width */
+  color: #000000;
+  text-align: left;
+}
+
+.upper-text-right {
+  text-align: right;
+  font-size: 1.7rem;
+  flex: 3; 
+  color: #414141;
+  }
+
+.lower-box {
+  flex: 1;
+  background-color: #ffffff;
+  overflow-y: auto;
+  /* padding: 10px; */
+  }
+
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 20px; 
+}
+
+.photo-item {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Top and Bottom Single Image Styling */
+.large-center {
+  width: 900px; /* Larger size for the single images */
+  height: 600px;
+}
+
+/* Rows of Two Images */
+.row {
+  display: flex;
+  justify-content: center; /* Center the images within the row */
+  gap: 20px; /* Space between images */
+}
+
+.row .photo-item {
+  width: 800px; /* Width for the two images in a row */
+  height: 500px; /* Height for the two images in a row */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .large-center {
+    width: 100%;
+    height: auto;
+  }
+
+  .photo-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .row .photo-item {
+    width: 45%; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .row .photo-item {
+    width: 100%; /* Stack images on very small screens */
+  }
+}
