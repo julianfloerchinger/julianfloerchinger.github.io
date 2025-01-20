@@ -325,26 +325,26 @@ body, html {
   }
 }
 
-/* Für sehr kleine Bildschirme <= 480px */
+
 @media (max-width: 480px) {
   .responsive-grid-container {
-    padding: 1rem; /* Noch weniger Padding auf kleinen Geräten */
+    padding: 1rem; /* weniger Padding auf kleinen Geräten */
   }
 
   .container-text {
-    font-size: 0.9rem; /* Noch kleinere Schriftgröße für sehr kleine Bildschirme */
+    font-size: 0.9rem; /* kleinere Schriftgröße für sehr kleine Bildschirme */
   }
 }
 
 .instagram-link {
-  color: #000000; /* Instagram purple color */
-  text-decoration: none; /* Removes the underline */
-  font-size: 2rem; /* Adjusts the font size */
+  color: #000000; 
+  text-decoration: none; 
+  font-size: 2rem; 
 }
 
 .instagram-link:hover {
-  color: #FF00FF; /* Instagram pink color on hover */
-  text-decoration: none; /* Adds an underline on hover */
+  color: #FF00FF; 
+  text-decoration: none; 
 }
 
 .getintouch {
