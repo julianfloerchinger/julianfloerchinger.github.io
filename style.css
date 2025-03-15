@@ -258,6 +258,8 @@ body, html {
   gap: 2rem; /* Abstand zwischen Bild und Text */
   background-color: #ffffff; /* Weißer Hintergrund */
   padding: 3rem; /* Abstand von 2,5rem oben und unten */
+  padding-left: 40px;
+  padding-right: 40px;
   
 }
 
@@ -265,7 +267,7 @@ body, html {
 .container-left {
   display: flex; 
   align-items: center; 
-  
+
   
 }
 
@@ -281,6 +283,7 @@ body, html {
   display: block; /* Change from flex to block layout */
   text-align: left;
   align-items: center;
+ 
 }
 
 .container-text {
@@ -289,7 +292,6 @@ body, html {
   line-height: 1.9;
   text-align: left;
   max-width: 900px;
-  padding-right: 41px;
   
    /* Maximale Breite für den Text */
 }
