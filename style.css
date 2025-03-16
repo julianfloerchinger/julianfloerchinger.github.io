@@ -410,8 +410,8 @@ body, html {
 .responsive-grid {
   margin-top: 120px;
   display: grid;
-  grid-template-columns: repeat(5, 300px); 
-  grid-template-rows: repeat(2, 800px); /* 2 rows of equal height */
+  grid-template-columns: repeat(6, 260px); 
+  grid-template-rows: repeat(2, 760px); /* 2 rows of equal height */
   /* gap: 2px;  */
   /* row-gap: 100px; */
   width: 100%;
