@@ -55,6 +55,20 @@
     url('font/ClashGrotesk-Regular\ Kopie.woff') format('woff'),
 }
 
+@font-face {
+  font-family:'OverusedGrotesk-Medium';
+  src:
+		url('font/OverusedGrotesk-Medium\ Kopie.woff2') format('woff2'),
+    url('font/OverusedGrotesk-Medium\ Kopie.woff') format('woff'),
+}
+
+@font-face {
+  font-family:'OverusedGrotesk-Roman';
+  src:
+		url('font/OverusedGrotesk-Roman\ Kopie.woff2') format('woff2'),
+    url('font/OverusedGrotesk-Roman\ Kopie.woff') format('woff'),
+}
+
 /* ____________Fonts_____zu_______ */
 
 
@@ -63,8 +77,6 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family:"ClashGrotesk_Regular";
-  /* overflow: hidden;  */
   scroll-behavior: smooth;
 }
 
@@ -283,7 +295,7 @@ body, html {
   display: block; /* Change from flex to block layout */
   text-align: left;
   align-items: center;
- 
+ font-family: 'OverusedGrotesk-Roman';
 }
 
 .container-text {
@@ -464,9 +476,9 @@ body, html {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  font-size: 2rem;
-font-weight: bold;
-  font-family: "ClashGrotesk_Regular";
+  font-size: 2.5rem;
+
+  font-family: "OverusedGrotesk-Roman";
   background-color: #ffffff; /* Optional: different background for text area */
   color: #333;
   text-align: center;
@@ -476,7 +488,7 @@ font-weight: bold;
 
  .year{
   font-size: 1.5rem;
-  font-family:"ClashGrotesk_Regular";
+  font-family:"Overusedgrotesk-roman";
 }
 
 .responsive-grid a {
@@ -542,7 +554,7 @@ font-weight: bold;
   flex: 7; /* 70% width */
   color: #000000;
   text-align: left;
-  font-family: 'ClashGrotesk_Regular';
+  font-family: 'OverusedGrotesk-Roman';
 }
 
 .upper-text-right {
@@ -550,7 +562,7 @@ font-weight: bold;
   font-size: 1.7rem;
   flex: 3; 
   color: #FF00FF;
-  font-family:'ClashGrotesk_Regular' ;
+  font-family:'OverusedGrotesk-Roman' ;
   }
 
 .lower-box {
